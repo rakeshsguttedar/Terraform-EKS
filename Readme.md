@@ -1,9 +1,9 @@
 
 
-### Step 1: Create an S3 Bucket
+### Step 1: Create an S3 Bucket and a DynamoDB table in AWS Console UI in the region ap-south-1
 
 ### Step 2: [In repo] Replace Bucket Name and Key Name in Terraform Configuration
-Ensure you replace the bucket name in your `provider.tf` and the key name in your `variable.tf` with the appropriate values.
+Ensure you replace the bucket name and dynamodDB table name in your `backend.tf` and the key name in your `variable.tf` with the appropriate values.
 
 ### Step 3: Create Root Credentials (Access Key & Secret Access Key)
 ```bash
@@ -41,7 +41,6 @@ git clone https://github.com/terraform-aws-modules/terraform-aws-eks.git
 cd Terraform-EKS
 terraform init
 terraform plan
-Terraform apply --auto
 ```
 
 ### Step 9: Apply Terraform Changes
@@ -65,4 +64,7 @@ mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$P
 aws eks update-kubeconfig --name AWS-EKS --region ap-south-1
 ```
 
-### Step-12: Play around with EKS and make sure , afterwards to run 'terraform destroy --auto-approve' to delete the reosurces
+### Step-12: Play around with EKS and afterwards make sure to run terraform destroy to delete the reosurces
+```bash
+'terraform destroy --auto-approve' 
+```
