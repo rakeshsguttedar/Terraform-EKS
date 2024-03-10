@@ -37,7 +37,7 @@ variable "type" {
 
 # Key 
 variable "key_name" {
-  default = "Key"
+  default = "aws-aps-key"
 }
 
 # Instance count
